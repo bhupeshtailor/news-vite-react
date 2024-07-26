@@ -5,7 +5,7 @@ import { useState } from "react";
 
 
 export default function Router() {
-    const pageSize = 5;
+    const pageSize = 15;
     const apiKey = import.meta.env.VITE_NEWS_API
 
     const [progress, setProgress] = useState(0)
@@ -14,6 +14,7 @@ export default function Router() {
         <BrowserRouter>
             <Routes>
                 <Route path="/" element={<Layout progress={progress} setProgress={setProgress} />}>
+
                     <Route index element={<News progress={progress} setProgress={setProgress} apiKey={apiKey} key="general" pageSize={pageSize} country="in" category="general" />} />
 
                     <Route exact path="/business" element={<News progress={progress} setProgress={setProgress} apiKey={apiKey} key="business" pageSize={pageSize} country="in" category="business" />} />

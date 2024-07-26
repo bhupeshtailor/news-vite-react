@@ -51,10 +51,10 @@ const News = (props) => {
             <InfiniteScroll
                 dataLength={articles.length}
                 next={fetchMoreData}
-                hasMore={articles.length !== totalResults}
+                hasMore={articles.length + props.pageSize !== totalResults}
                 loader={<Spinner />}
             >
-                <div className="container mt-5">
+                <div className="container my-5">
                     <div className="row row-cols-1 row-cols-sm-3 g-3">
 
                         {articles.map((element) => {
